@@ -52,7 +52,7 @@ void pos_main(char* path) {
         }
         else if (result == -3) {
             int latest_year = latest_login_date / 10000;
-            int latest_month = (latest_login_date / 100) - year * 100;
+            int latest_month = (latest_login_date / 100) - latest_year * 100;
             int latest_date = latest_login_date % 100;
             printf("오류: 마지막 로그인 날짜가 %d년 %d월 %d일입니다. 마지막 정산일 이후의 날짜로만 로그인 할 수 있습니다.\n", latest_year, latest_month, latest_date);
         } else {
