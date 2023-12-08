@@ -10,9 +10,9 @@ void tearDown(void) {
     
 }
 
-char* trim_str(char* str) {
+char* trim_str(const char* str) {
     int len = strlen(str);
-    char* string = malloc(sizeof(char) * len);
+    char* string = malloc(sizeof(char) * (len + 1));
     strcpy(string, str);
     trim(string);
     return string;

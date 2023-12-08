@@ -23,7 +23,7 @@ void pos_main(char* path) {
     get_current_dir(path, base_dir);
     // 파일 무결성 검사
     if(read_product_file() == -1) exit(EXIT_FAILURE);
-    
+
     // table_amount가 -1이라면 테이블 개수 입력 테이블로
     if (table_amount == -1) table_amount_prompt();
     if ((tables = malloc(sizeof(Table) * table_amount)) == NULL) {
@@ -51,10 +51,10 @@ void pos_main(char* path) {
             printf("오류 : 그레고리력에 존재하지 않는 날짜입니다.\n");
         }
         else if (result == -3) {
-            int year = latest_login_date / 10000;
-            int month = (latest_login_date / 100) - year * 100;
-            int date = latest_login_date % 100;
-            printf("오류: 마지막 로그인 날짜가 %d년 %d월 %d일입니다. 마지막 정산일 이후의 날짜로만 로그인 할 수 있습니다.\n", year, month, date);
+            int latest_year = latest_login_date / 10000;
+            int latest_month = (latest_login_date / 100) - year * 100;
+            int latest_date = latest_login_date % 100;
+            printf("오류: 마지막 로그인 날짜가 %d년 %d월 %d일입니다. 마지막 정산일 이후의 날짜로만 로그인 할 수 있습니다.\n", latest_year, latest_month, latest_date);
         } else {
             date = result; // 로그인 날짜 저장
             break;

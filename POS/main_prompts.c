@@ -48,7 +48,7 @@ void main_prompt() {
 
 int exit_check() {
     for (int i = 0; i < table_amount; i++) {
-        Table *table = &tables[i];
+        Table const *table = &tables[i];
         for (int j = 0; j < table->length; j++) {
             if (table->products[j].amount != 0) {
                 return -1;
