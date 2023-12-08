@@ -11,7 +11,6 @@
 #include "types.h"
 #include "utils.h"
 
-#include <inttype.h>
 #include <stdlib.h>
 #include <string.h>
 
